@@ -1,0 +1,15 @@
+name: Crystal CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    container:
+      image: crystallang/crystal
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run all
+        run: crystal run_all.cr
