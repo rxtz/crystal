@@ -4,10 +4,10 @@ require "colorize"
 
 failing = [] of String
 
-Dir["**/**.cr"].each do |x|
+Dir["**/*.cr"].each do |x|
   next if x == "run_all.cr"
 
-  puts "\n- RUN #{x}".colorize(:black).mode(:underline)
+  puts "\n- RUN #{x}".colorize(:dark_gray).mode(:underline)
 
   op = system("cd #{File.dirname(x)} && crystal #{File.basename(x)}")
 
